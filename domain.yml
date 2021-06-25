@@ -7,7 +7,6 @@ intents:
   - deny
   - mood_great
   - mood_unhappy
-  - bot_challenge
   - covid_state
 
 actions:
@@ -18,7 +17,7 @@ entities:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! I will help you with the Covid Information , Can you please enter the state ?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"

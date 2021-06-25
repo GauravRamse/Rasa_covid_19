@@ -9,3 +9,18 @@ Part - 1 of Development
 
 Part - 2 of Development
 1) Add vaccination info.
+
+#### Flow of bot
+hi
+
+Which city information you want
+
+Delhi
+
+Can you please confirm the city 
+
+Buttons with 5 city
+
+Click on button
+
+Reply   

@@ -8,13 +8,15 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 import requests
+from datetime import datetime
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
+
 #
-class ActionHelloWorld(Action):
+class ActionCovidTracker(Action):
 
     def name(self) -> Text:
         return "action_corona_tracker"
@@ -37,9 +39,15 @@ class ActionHelloWorld(Action):
             if data['state'] == state.title():
                 print(data)
 
+        date_time_obj = datetime.strptime(data['lastupdatedtime'], '%d/%m/%Y %H:%M:%S')
+        message = "Active case are {} , Unfortunately there are {} deaths, This Information updated on {}".format(data['active'],
+                                                                                                                  data['deaths'],
+                                                                                                                  datetime.strftime(
+                                                                                                                      date_time_obj,
+                                                                                                                      '%b %d %Y'))
 
-        message = "Active case are {}".data['active']
-        print(message)
-        dispatcher.utter_message(text="Hello Wun actionorld!  {}".format(state))
+        dispatcher.utter_message(text="You have choosen  {} state ".format(state))
+        dispatcher.utter_message(text="Wait for second please, I am fetching information from web")
+        dispatcher.utter_message(text=message)
 
         return []
