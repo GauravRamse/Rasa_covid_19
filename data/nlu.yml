@@ -84,9 +84,13 @@ nlu:
     - so saad
     - so sad
 
-- intent: bot_challenge
+
+
+- intent: covid_state
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - [india](state)
+    - [Maharashtra](state)
+    - [Delhi](state)
+    - [asam](state)
+    - [gujrat](state)
+    - [punjab](state)

@@ -8,6 +8,13 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - covid_state
+
+actions:
+  - action_corona_tracker
+
+entities:
+  - state
 
 responses:
   utter_greet:
@@ -26,8 +33,6 @@ responses:
   utter_goodbye:
   - text: "Bye"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
 
 session_config:
   session_expiration_time: 60
